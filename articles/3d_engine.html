@@ -1,0 +1,103 @@
+<html>
+<head>
+<!-- This line from W3's responsive CSS design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../blueegg.png">
+
+<!-- Sources for JS stuff -->
+<script type="text/javascript" src="3d_engine/helpers.js"></script>
+<script type="text/javascript" src="3d_engine/xforms.js"></script>
+<script type="text/javascript" src="3d_engine/matrix_stuff.js"></script>
+<script type="text/javascript" src="3d_engine/3d_stuff.js"></script>
+<script type="text/javascript" src="3d_engine/main.js"></script>
+
+<title>Software 3D engine (js)</title>
+</head>
+<body onload="begin_test()">
+
+<div id="header">
+	<a href="../index.html">Home</a>
+	<a href="../about.html">About</a>
+	<a href="../articles.html">Articles</a>
+	<a href="../contact.html">Contact</a>
+</div>
+
+<div id="main">
+
+<div class="card" id="test">
+	
+	<h1>Cube Test</h1>
+	<hr>
+	
+	<p>I'm still in the middle of writing the code. Click the buttons 
+	to start and stop the cube test. Note there is an optical illustion 
+	here: the cube is spinning counter-clockwise (as viewed from the 
+	top) but you can make yourself see it spinning clockwise. Because 
+	of the perspective transformation, it looks distorted when you're 
+	seeing the wrong rotation direction. </p>
+
+<canvas id="cv" width=200 height=200 style="border: 0px solid black; margin: auto; display: block;"></canvas>
+
+<button style="display:block; margin:auto;" type="button" onclick="begin_test()">Start test</button>
+<button style="display:block; margin:auto;" type="button" onclick="window.clearInterval(handle)">Stop test</button>
+
+</div>
+
+<div class="card" id="bones_and_sinew">
+	<h2>"Bill of Materials"</h2>
+	<hr>
+	
+	<p>I find it's helpful to make a short list of the basic components 
+	that will make up the whole system. Here goes:</p>
+	
+	<ul>
+		<li>We'll use the HTML <!-- <canvas> --> <span class="code" 
+		style='color:#000000;background:#ffffff;'><span 
+		style='color:#a65700; '>&lt;</span><span style='color:#800000; 
+		font-weight:bold; '>canvas</span><span style='color:#a65700; 
+		'>></span></span> element to draw on the screen. Specifically, 
+		on each frame we'll compute the visuals in a large buffer, then 
+		use the <!-- putImageData(dat, x, y) --> <span class="code"
+		style='color:#000000;background:#ffffff;'>putImageData<span 
+		style='color:#808030; '>(</span>dat<span style='color:#808030; 
+		'>,</span> x<span style='color:#808030; '>,</span> y<span 
+		style='color:#808030; '>)</span></span> function in JavaScript 
+		to write it into the canvas.</li>
+		
+		<li>We need a way to "time" our animations. The easiest way 
+		would be to somehow trigger our main drawing function at even 
+		intervals, but apparently that makes user input difficult. I'll 
+		figure out the best choice and come back to it.</li>
+		
+		<li>At this point, the only job left to do is fill in the frame 
+		buffer. I'm planning to use the S-buffer technique; the 
+		original post I read seems to be taken down, but luckily I've 
+		used this technique before and I'll re-explain it 
+		here.</li>
+		
+		<li>We'll use the standard matrix and perspective divide 
+		techniques to copmute the 2d positions of 3d points.</li>
+		
+		<li>I found a simple scan conversion routine in an <a 
+		href="https://www.amazon.ca/Graphics-Gems-Andrew-S-Glassner/dp/0122861663">old 
+		book</a>. I'll describe the method in the relevant 
+		article.</li>
+		
+		<li>I want to use either Gouraud or Phong shading. I haven't 
+		found anything that explains it simply, so I'll try to figure 
+		it out.</li>
+		
+		<li>More importantly, I want my code to have the "vertex shader 
+		+ fragment shader" model used in openGL in case I want to plug 
+		in new shaders down the road.</li>
+	</ul>
+	
+	<p>Okay, that puts my thoughts on the page. I'm gonng do a few 
+	quick and dirty tests to find out how I'm gonna do this, then I'll 
+	get to work on writing the articles.</p>
+	
+</div>
+
+</body></html>
+

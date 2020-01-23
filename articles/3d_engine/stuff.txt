@@ -1,0 +1,21 @@
+cv = document.getElementById("cv");
+ctx = cv.getContext("2d");
+dat = ctx.createImageData(200,200);
+pixels = dat.data;
+
+angle = 0;
+var myfn = function() {
+    var posx = 100 + Math.ceil(50*Math.sin(angle));
+    var posy = 100 - Math.ceil(50*Math.cos(angle));
+    whiten(pixels, 200, 200);
+    bresline(100,100,posx,posy,[0,0,0],pixels,200);
+    ctx.putImageData(dat,0,0);
+    angle += (2*Math.PI)/60;
+    if (angle > 2*Math.PI) {
+        angle -= 2*Math.PI;
+    }
+}
+
+handle = setInterval(myfn, 1000/60);
+
+window.clearInterval(handle);

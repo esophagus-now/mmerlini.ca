@@ -1,0 +1,147 @@
+<!--
+
+This is the text formatting code that is stored on my server's hard drive! 
+Your web browser converts this special code to the visuals that you 
+normally see.
+
+-->
+
+<html>
+<head>
+<!-- This line from W3's responsive CSS design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" href="../blueegg.png">
+<title> Host your own website </title>
+</head>
+<body>
+
+<div id="header">
+	<a href="../index.html">Home</a>
+	<a href="../about.html">About</a>
+	<a href="../articles.html">Articles</a>
+	<a href="../contact.html">Contact</a>
+</div>
+
+<div id="main">
+
+<div class="card" id="overview">
+	<h1>Creating your Own Website from Scratch</h1>
+	<hr>
+	
+	<p class="date"> January 7, 2020 </p>
+	
+	<p>Note that there are easy ways to make a website. If all you need is 
+	a couple of pages, you should just use Squarespace.</p>
+	
+	<p>Of course, I only needed a couple of pages, but for whatever reason 
+	I was compelled to do everything myself. This entails:</p>
+	
+	<ul>
+		<li>Buying/managing a domain name</li>
+		<li>Hosting the content (which could include the Apache web 
+		    server)</li>
+		<li>Actually writing up HTML and CSS</li>
+		<li>For fancy things on the client side, writing JS</li>
+		<li>For fancy things on the server side, using any one of a HUGE
+		    list of available pieces of software. Traditionally, this is 
+		    PHP with a mySQL database. </li>
+	</ul>
+	
+	<p>This article only deals with the first two items, after a brief 
+	refresher on how websites work.</p>
+</div>
+
+<div class="card" id="how_web_works">
+	<h2>How Websites Work</h2>
+	<hr>
+	
+	<p>First, check out this diagram. Each of the three icons on the bottom 
+	represents a computer accessing the web. The gray box at the top 
+	represents a computer that serves a website. The arrows represent the 
+	flow of messages between two points.</p>
+	
+	<img src="host_your_own/how_web_works.png" alt="Quick and dirty web block diagram">
+	
+	<p>In general, when a <i>client</i> accesses a website, web requests 
+	are sent to a specific computer via the internet. This computer is 
+	referred to as a <i>server</i>. For my website, the server is a computer 
+	that I rent from Google.</p>
+	
+	<p>All web requests arriving at the server computer go through the 
+	<i>web server software</i>. My web server software is the <a 
+	href="https://httpd.apache.org/">Apache</a> program. It is the web 
+	server software that decides what to send back to the clients. On many 
+	websites (including this one) the web server software is configured to 
+	send back files that are stored on the server's hard drive.</p>
+	
+	<div class="inset"> 
+	<div class="inset_title">Try this now!</div> 
+	<p>Right-click on this page and select "View page source". On some web 
+	browsers, you can also hit CTRL-U. This will show you the actual code 
+	that I (lovingly) typed into the files on my server. Apache is sending 
+	these files back to your computer as plain text; it is your <i>web 
+	browser</i> that presents them as nice web pages.</p>
+	</div>
+</div>
+
+<div class="card" id="getting_a_domain">
+	<h2>Getting a Domain Name</h2>
+	<hr>
+	
+	<p>A <i>domain name</i> is the name of a website that you type into 
+	your browser. This website's domain name is <span class="code"> 
+	mmerlini.ca</span>. As it turns out, when your computer sends messages 
+	over the internet, they <i>do not use domain names</i>; in fact, they 
+	use <i>IP addresses</i>. Domain names are for the benefit of human 
+	beings who can't easily remember long strings of numbers.</p>
+	
+	<p>To draw an analogy, a computer's IP address is like a person's phone 
+	number. You need to know the person's phone number to actually call 
+	them, but usually you only remember their name. If you don't know a 
+	person's number, you can look it up in the phonebook or browse a list 
+	of contacts on your phone.</p>
+	
+	<p>In the context of the internet, the phone book is called the Domain 
+	Name System (DNS). When you want to make your own website, you 
+	essentially want to add a new DNS entry that maps your desired domain 
+	name to the IP address of your server.</p>
+	
+	<h3>Buying a Domain Name</h3>
+	
+	<p>This is where things get complicated. Basically, there is an 
+	organization out there called the IANA (Internet Assigned Numbers 
+	Authority) who manage a number of so-called <i>DNS root servers</i>. 
+	You can see the list <a href="https://www.iana.org/domains/root/servers">
+		
+	here</a>. When you go to a website, your web browser will first look up 
+	the domain name by sending a query to one of these machines; </p>
+	
+	<div class="inset">
+	<div class="inset_title">But How Do I Look Up a Root Server?</div>
+	
+	<p>You may think this is a chicken-and-egg situation. To convert a 
+	domain to an IP address, I have to get the IP address for a root 
+	server. And how do I do that? I have to look up its domain name.</p>
+	
+	<p>This is why the root servers must have "well-known" IP addresses. If 
+	you didn't already know the IP address, there would be no way you could 
+	get it.</p>
+	
+	<p>Just to let you know: Google manages its own DNS name resolver at IP 
+	address <span class="code">8.8.8.8</span>. Although Google probably 
+	uses this DNS server to track what websites people go to, it's a lot 
+	easier to remember this IP address than the official ones. </p>
+	
+	<p>Another pro tip: you can often use your internet router as a DNS 
+	resolver. This is usually the better way to go because the router will 
+	in turn ask your ISP, who caches most common domain names.</p>
+	
+	</div>
+	
+</div>
+
+</div>
+
+</body></html>
+

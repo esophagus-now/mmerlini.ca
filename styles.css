@@ -1,0 +1,181 @@
+body { 
+	/*font-family: monaco, monospace, courier;*/
+	font-family: Cambria, Georgia, serif;
+	line-height: 1.58;
+	font-size: 14pt;
+	background: #ded;
+	background-size: cover;
+	margin: 0px;
+}
+
+#main {
+	margin: auto;
+	min-width: 150px;
+	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+#main .card {
+	background: #fff;
+	/*In most fonts, the width of a character is about 5/8ths its height*/
+	max-width: 40em;
+	text-align: left;
+	/*This shadow code stolen from w3schools*/
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 5px;
+	/*box-sizing: border-box;*/
+	padding-top: 5px;
+	padding-bottom: 5px;
+	/* A little trap: you have to divide these percentages by 2 */
+	padding-left: 5%;
+	padding-right: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  body {
+	font-size: 12pt;
+  }
+  #main .card {
+    padding-left: 1%;
+    padding-right: 1%;
+  }
+}
+
+#main .card p {
+	text-align: justify;
+}
+
+
+#main .card p.date {
+	text-align: left;
+	text-decoration: underline;
+}
+
+#main .card h1,h2,h3,h4,h5 {
+	text-align: center;
+}
+
+#header {
+	line-height: 1;
+	border-radius: 0px;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	text-align: center;
+	display: block;
+	color: black;
+	background: #ded;
+	padding: 5px 0px 8px 0px;
+	border-bottom: 2px dotted black;
+	margin: auto;
+}
+
+#header a {
+	background: Coral;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 2px;
+	color: black;
+	text-decoration: none;
+}
+
+#header a:hover {
+	background: #fd0;
+}
+
+#header a + * {
+	margin-left: 5px;
+}
+
+/*These two rules let me use the same link formatting in other parts of the site*/
+a.fancy {
+	background: Coral;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 2px;
+	color: black;
+	text-decoration: none;
+}
+
+a.fancy:hover {
+	background: #fd0;
+}
+
+hr {
+	text-align: center;
+	width: 75%;
+}
+
+table, td, th {
+	border: 1px solid black;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+tr:hover {
+	background: #F8F8F8;
+}
+
+th, td {
+	padding: 0.5em;
+}
+
+th {
+	background: #fff;
+}
+
+img {
+	border: 1px solid black;
+	margin: auto;
+	width: 100%;
+	height:auto;
+}
+
+.inset {
+	border: 1px solid black;
+	background: #F8F8F8;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.inset_title {
+	font-weight: bold;
+	font-variant: small-caps; 
+	text-align: center;
+}
+
+.code {
+	font-family: monaco, monospace, courier;
+	background: #ccc;
+	padding: 0px 2px;
+	border-radius: 5px;
+}
+
+/*Stylize text like Death in Terry Pratchett novels*/
+.death {
+    font-family: Baskerville, Georgia, serif;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+/*Table of Contents styles*/
+ul.toc {
+    text-align: center;
+    list-style-type: none;
+    padding-left: 0px;
+    /*margin: auto;
+	border: 1px solid black;
+	background: #F8F8F8;
+	padding: 5px;
+	border-radius: 5px;*/
+}
+
+span.code {
+	font-family: monospace;
+}

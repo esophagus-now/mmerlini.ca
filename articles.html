@@ -1,0 +1,57 @@
+<html>
+<head>
+<!-- This line from W3's responsive CSS design -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="blueegg.png">
+<title> Articles - Marco Merlini's website</title>
+
+<style>
+	#article_table td:nth-child(2),td:nth-child(3) {
+		white-space: nowrap;
+	}
+	
+	@media (max-width: 600px) {
+		#article_table td:nth-child(2),td:nth-child(3),th:nth-child(2),th:nth-child(3) {
+			display:none;
+		}	
+	}
+</style>
+
+</head>
+<body>
+
+<div id="header">
+	<a href="index.html">Home</a>
+	<a href="about.html">About</a>
+	<a href="articles.html">Articles</a>
+	<a href="contact.html">Contact</a>
+</div>
+
+<div id="main">
+
+<div class="card">
+	<h1> Articles </h1>
+	<hr>
+	
+	<table id="article_table">
+	<tr id="headers">
+		<th>Article</th>
+		<th>Published</th>
+		<th>Modified</th>
+		<th>Description</th>
+	</tr>
+	<tr id="host_your_own">
+		<td><a href="articles/host_your_own.html">How to host your own website</a></td>
+		<td>January 6, 2020</td>
+		<td>January 7, 2020</td>
+		<td>How does a website work, how to get a domain name, and how to configure a machine to host your content</td>
+	</tr>
+	</table>
+	
+</div>
+
+</div>
+
+</body></html>
+
